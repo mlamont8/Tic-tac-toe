@@ -12,26 +12,45 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<h1>Online Tic Tac Toe</h1>
+			<h1 id="pHeader">Online Tic Tac Toe</h1>
 		</div>
-		<div class="row">
-			<div id="playArea">
+		<div class="row" id="playRow">
+
+			<div class="col-xs-8 col-xs-offset-3" id="playArea">
+				<div class="row">
+					<div class="col-md-4 blk" id="blk1">1</div>
+					<div class="col-md-4 blk" id="blk2">2</div>
+					<div class="col-md-4 blk" id="blk3">3</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 blk" id="blk4">4</div>
+					<div class="col-md-4 blk" id="blk5">5</div>
+					<div class="col-md-4 blk" id="blk6">6</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 blk" id="blk7">7</div>
+					<div class="col-md-4 blk" id="blk8">8</div>
+					<div class="col-md-4 blk" id="blk9">9</div>
+				</div>
 			</div>
 		</div>
 
-
-
-
-
 	</div>
 
-	<div id="boxes">
-		<div id="dialog" class="window">
-			<p id='popupText'>Would You Prefer to play with X or O?</p>
-			<div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree" style="color:red;" href="#">I do not agree</a> </div>
+	<!--	<div id="boxes">
+		<div id="dialog" class="window container">
+			<h1 id='popupText'>Would You Prefer to Play with X or O?</h1>
+			<div class='row'>
+				<div class="col-xs-4 lDiv">
+					<button class="btn btn-default lButton">X</button>
+				</div>
+				<div class="col-xs-4 col-xs-offset-4">
+					<button class="btn btn-default rButton">O</button>
+				</div>
+			</div>
 		</div>
 		<div id="mask"></div>
-	</div>
+	</div>-->
 
 
 </body>

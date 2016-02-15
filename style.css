@@ -1,5 +1,9 @@
 /*# sourceMappingURL=style.css.map */
 
+html {
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
 #mask {
 	position: absolute;
 	left: 0;
@@ -31,14 +35,36 @@
 	font-size: 15pt;
 }
 
-#popupfoot {
-	font-size: 16pt;
-	position: absolute;
-	bottom: 0px;
-	width: 250px;
-	left: 250px;
-}
-
 #popupText {
 	font-size: 24pt;
+	font-weight: bold;
+}
+
+.btn {
+	font-size: 100pt;
+	background-color: lightBlue;
+	height: 200px;
+	width: 200px;
+	border-radius: 25px;
+}
+
+#pHeader {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+#playRow {}
+
+#playArea {
+	text-align: center;
+	height: 500px;
+	width: 600px;
+}
+
+.blk {
+	height: 200px;
+	width: 200px;
+	background-color: black;
+	border-color: blue;
+	border-style: solid;
 }

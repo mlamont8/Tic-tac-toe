@@ -1,13 +1,12 @@
-// Allow user to select x or o.
 $(document).ready(function () {
-
+	//Allow user to select X or O
 	var id = '#dialog';
 
 	//Get the screen height and width
 	var maskHeight = $(document).height();
 	var maskWidth = $(window).width();
 
-	//Set heigth and width to mask to fill up the whole screen
+	//Set height and width to mask to fill up the whole screen
 	$('#mask').css({
 		'width': maskWidth,
 		'height': maskHeight
@@ -42,5 +41,8 @@ $(document).ready(function () {
 		$(this).hide();
 		$('.window').hide();
 	});
+
+	// Done with Popup Page
+
 
 });
