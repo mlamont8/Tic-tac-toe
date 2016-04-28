@@ -1,7 +1,8 @@
+var user,comp;
 $(document).ready(function () {
 	//Allow user to select X or O
 	var id = '#dialog';
-
+console.log(id);
 	//Get the screen height and width
 	var maskHeight = $(document).height();
 	var maskWidth = $(window).width();
@@ -41,8 +42,24 @@ $(document).ready(function () {
 		$(this).hide();
 		$('.window').hide();
 	});
+    
+$('button').click(function () {
+    user = $(this).attr('id');
+    
+    $('#mask, .window').hide();
+    gamePlay(user);
+});
 
-	// Done with Popup Page
+   	// Done with Popup Page
 
+    function gamePlay(user){
+        if (user === 'X'){
+            comp = 'O';
+            console.log('comp', comp);
+        }else{
+            comp = "X"
+            console.log('comp', comp);
+        }
+    }
 
 });
