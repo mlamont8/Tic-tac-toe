@@ -1,8 +1,8 @@
-var user,comp;
+var user, comp, turn = true;
 $(document).ready(function () {
 	//Allow user to select X or O
 	var id = '#dialog';
-console.log(id);
+
 	//Get the screen height and width
 	var maskHeight = $(document).height();
 	var maskWidth = $(window).width();
@@ -43,23 +43,37 @@ console.log(id);
 		$('.window').hide();
 	});
     
-$('button').click(function () {
+$('.prebutton').click(function () {
     user = $(this).attr('id');
     
     $('#mask, .window').hide();
-    gamePlay(user);
+    comp = gamePlay(user);
+    console.log('user', user);
+    console.log('comp', comp);
 });
 
    	// Done with Popup Page
+var board = {b1:null, b2:null, b3:null, b4:null, b5:null, b6:null, b7:null, b8:null, b9:null};
 
-    function gamePlay(user){
-        if (user === 'X'){
-            comp = 'O';
-            console.log('comp', comp);
-        }else{
-            comp = "X"
-            console.log('comp', comp);
-        }
-    }
 
 });
+    function gamePlay(user){
+        if (user === 'X'){
+            return 'O';
+
+        }else{
+            return 'X';
+
+        }
+    }
+    // states whos turn it is
+    function state(turn) {
+       if (!turn) {
+           return "computer";
+       }
+        return "human";
+    }
+    //returns current state of board of win, lose, draw or current
+    function gamestate(){
+        
+    }
