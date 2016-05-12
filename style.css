@@ -59,6 +59,9 @@ html {
 	margin: auto;
 	height: 500px;
 	width: 600px;
+    text-align: center;
+    font-size: 120px;
+    color: white;
 }
 
 .blk {
