@@ -47,7 +47,7 @@ $('.prebutton').click(function () {
     user = $(this).attr('id');
     
     $('#mask, .window').hide();
-    comp = gamePlay(user);
+    comp = tokenSelect(user);
     console.log('user', user);
     console.log('comp', comp);
     //empty board spaces
@@ -77,21 +77,38 @@ function humanMove(board, user, comp){
         attempt = $(this).attr('id');
          boardUpdate(attempt, board, user,comp);
     });
-    console.log(attempt);
+ 
 }
 function boardUpdate(attempt, board, user,comp){
-    console.log(board);
+    console.log(attempt);
+var val = board[attempt];
+    console.log(val);
     //check to see if already clicked
-    if (attempt !== null){
+    
+    if (val !== null){
         alert("Try Another Move");
     }
     //update the board object with attempt key value
-    console.log(attempt, user);
+
         board[attempt] = user;
-    console.log(board);
-    
+  // send to read board
+    read(board,user);
 }
-    function gamePlay(user){
+// read the current state of the board
+function read(board,user){
+    console.log(board, user);
+    var val = user;
+    for (i =0; i < board.length; i++){
+        if board[i]
+    }
+    if (board.b2 == board.b3){
+        console.log('winner');
+    }
+    
+    console.log('keep going');
+    }
+}
+    function tokenSelect(user){
         if (user === 'X'){
             return 'O';
 
@@ -100,13 +117,7 @@ function boardUpdate(attempt, board, user,comp){
 
         }
     }
-    // states whos turn it is
-    function state(turn) {
-       if (!turn) {
-           return "computer";
-       }
-        return "human";
-    }
+
     //returns current state of board of win, lose, draw or current
     function gamestate(){
         
