@@ -1,4 +1,5 @@
-var user, comp, turn = true;
+var user, comp, human, turn = true;
+
 $(document).ready(function () {
 	//Allow user to select X or O
 	var id = '#dialog';
@@ -51,7 +52,7 @@ $('.prebutton').click(function () {
     console.log('user', user);
     console.log('comp', comp);
     //empty board spaces
-    var board = {b1:null, b2:null, b3:null, b4:null, b5:null, b6:null, b7:null, b8:null, b9:null};
+    var board = {b1:'N', b2:'N', b3:'N', b4:'N', b5:'N', b6:'N', b7:'N', b8:'N', b9:'N'};
     // begin play
     tictacgo(board, user, comp);
 });
@@ -73,40 +74,72 @@ function tictacgo(board, user, comp){
 }
 
 function humanMove(board, user, comp){
-     var attempt; $(".blk").click(function() {
+     var attempt; 
+    $(".blk").click(function() {
         attempt = $(this).attr('id');
+        $(this).html(user);
          boardUpdate(attempt, board, user,comp);
     });
  
 }
 function boardUpdate(attempt, board, user,comp){
-    console.log(attempt);
+    
 var val = board[attempt];
-    console.log(val);
+    
     //check to see if already clicked
     
-    if (val !== null){
+    if (val !== 'N'){
         alert("Try Another Move");
     }
     //update the board object with attempt key value
 
         board[attempt] = user;
   // send to read board
-    read(board,user);
+    var plr = user;
+human = true;
+    read(board,plr,human);
 }
+
 // read the current state of the board
-function read(board,user){
-    console.log(board, user);
-    var val = user;
-    for (i =0; i < board.length; i++){
-        if board[i]
+function read(board,plr,human){
+    // takes object, push values into array
+var testArray = [];
+    for (var i = 1; i<=9; i++){
+        testArray.push(board['b'+i]);
+     //   console.log(board['b'+ i]);
     }
-    if (board.b2 == board.b3){
-        console.log('winner');
+    console.log(testArray, plr);
+    if ((testArray[1] && testArray[4] && testArray[7]) ||
+        (testArray[2] && testArray[5] && testArray[8]) ||
+        (testArray[3] && testArray[4] && testArray[5]) ||
+        (testArray[6] && testArray[7] && testArray[8]) ||
+        (testArray[2] && testArray[5] && testArray[8]) ||
+        (testArray[0] && testArray[1] && testArray[2]) ||
+        (testArray[0] && testArray[3] && testArray[6]) ||
+        (testArray[0] && testArray[4] && testArray[8]) ||
+        (testArray[2] && testArray[4] && testArray[6]) == plr){
+        if (human){
+            console.log ('YOU WIN!');
+        }else{
+        console.log ('YOU LOSE!');
     }
-    
+        // put tie condition here
+    }else{
+    if (human){
+        computerTurn(board,plr);
+    }else{
     console.log('keep going');
+    if (plr == 'X'){
+        comp = 'X';
+        user = 'O';
+        humanMove(board, user, comp);
+    }else{
+        comp = 'O';
+        user = 'X';
+        humanMove(board, user, comp);
     }
+    }
+}
 }
     function tokenSelect(user){
         if (user === 'X'){
@@ -118,7 +151,7 @@ function read(board,user){
         }
     }
 
-    //returns current state of board of win, lose, draw or current
-    function gamestate(){
-        
+// computers turn
+    function computerTurn(board,plr){
+        console.log('Computer turn!');
     }
