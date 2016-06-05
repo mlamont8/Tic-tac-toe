@@ -57,7 +57,7 @@ $('.prebutton').click(function () {
     tictacgo(board, user, comp);
 });
 
-   	// Done with Popup Page
+   	// Done with Mask Page
 
 
 
@@ -109,15 +109,16 @@ var testArray = [];
      //   console.log(board['b'+ i]);
     }
     console.log(testArray, plr);
-    if ((testArray[1] && testArray[4] && testArray[7]) ||
-        (testArray[2] && testArray[5] && testArray[8]) ||
-        (testArray[3] && testArray[4] && testArray[5]) ||
-        (testArray[6] && testArray[7] && testArray[8]) ||
-        (testArray[2] && testArray[5] && testArray[8]) ||
-        (testArray[0] && testArray[1] && testArray[2]) ||
-        (testArray[0] && testArray[3] && testArray[6]) ||
-        (testArray[0] && testArray[4] && testArray[8]) ||
-        (testArray[2] && testArray[4] && testArray[6]) == plr){
+    if (((testArray[1] && testArray[4] && testArray[7]) == plr)||
+        ((testArray[2] && testArray[5] && testArray[8]) == plr)||
+        ((testArray[3] && testArray[4] && testArray[5]) == plr)||
+        ((testArray[6] && testArray[7] && testArray[8]) == plr)||
+        ((testArray[2] && testArray[5] && testArray[8]) == plr)||
+        ((testArray[0] && testArray[1] && testArray[2]) == plr)||
+        ((testArray[0] && testArray[3] && testArray[6]) == plr)||
+        ((testArray[0] && testArray[4] && testArray[8]) == plr)||
+        ((testArray[2] && testArray[4] && testArray[6]) == plr)){
+        //currently either x or o's in winning position trigger win.
         if (human){
             console.log ('YOU WIN!');
         }else{
